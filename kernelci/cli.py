@@ -276,6 +276,11 @@ class Args:
         'help': "Storage URL",
     }
 
+    storage_auth = {
+        'name': '--storage-auth',
+        'help': "Authorization as a KEY=VALUE pair for access to storage",
+    }
+
     target = {
         'name': '--target',
         'help': "Name of a target platform",
