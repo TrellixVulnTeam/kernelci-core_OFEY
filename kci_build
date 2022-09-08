@@ -280,7 +280,7 @@ class cmd_init_bmeta(Command):
     opt_args = [Args.output, Args.build_config, Args.install,
                 Args.tree_name, Args.tree_url, Args.branch,
                 Args.commit, Args.describe, Args.describe_verbose,
-                Args.build_env, Args.arch]
+                Args.build_env, Args.arch, Args.install_path]
 
     def __call__(self, configs, args):
         if args.build_config:
@@ -301,7 +301,7 @@ or
 """)
             return False
 
-        step = kernelci.build.RevisionData(args.kdir, args.output, reset=True)
+        step = kernelci.build.RevisionData(args.kdir, args.output, reset=True, install_path=args.install_path)
         print("Initialising build meta-data in {}".format(step.output_path))
         res = step.run(opts={
             'tree': tree_name,
@@ -322,7 +322,7 @@ or
 Invalid arguments, --build-env and --arch need to be used together.""")
                 return False
             build_env = configs['build_environments'][args.build_env]
-            step = kernelci.build.EnvironmentData(args.kdir, args.output)
+            step = kernelci.build.EnvironmentData(args.kdir, args.output, install_path=args.install_path)
             res = step.run(opts={'build_env': build_env, 'arch': args.arch})
             if args.install:
                 step.install()
@@ -332,7 +332,7 @@ Invalid arguments, --build-env and --arch need to be used together.""")
 
 class MakeCommand(Command):
     args = [Args.kdir]
-    opt_args = [Args.verbose, Args.output, Args.j, Args.log, Args.install]
+    opt_args = [Args.verbose, Args.output, Args.j, Args.log, Args.install, Args.install_path]
     step_cls = None
 
     def __call__(self, configs, args):
@@ -350,7 +350,7 @@ class MakeCommand(Command):
     def _get_step(self, args):
         if self.step_cls is None:
             raise ValueError("Step class not defined.")
-        return self.step_cls(args.kdir, args.output, args.log)
+        return self.step_cls(args.kdir, args.output, args.log, install_path=args.install_path)
 
     def _get_opts(self, args, configs):
         return dict()
@@ -397,10 +397,10 @@ class cmd_make_kselftest(MakeCommand):
 class cmd_push_kernel(Command):
     help = "Push the kernel build artifacts"
     args = [Args.kdir, Args.api, Args.db_token]
-    opt_args = [Args.output, Args.db_config]
+    opt_args = [Args.output, Args.db_config, Args.install_path]
 
     def __call__(self, configs, args):
-        install = kernelci.build.Step.get_install_path(args.kdir, args.output)
+        install = kernelci.build.Step.get_install_path(args.kdir, args.output, args.install_path)
         meta = kernelci.build.Metadata(install)
         publish_path = meta.get('bmeta', 'kernel', 'publish_path')
         defconfig = meta.get('bmeta', 'kernel', 'defconfig')
