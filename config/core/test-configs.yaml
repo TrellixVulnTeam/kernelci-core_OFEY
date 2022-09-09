@@ -327,6 +327,13 @@ test_plans:
       kselftest_collections: "clone3"
     filters: *kselftest_no_fragment
 
+  kselftest-core:
+    <<: *kselftest
+    params:
+      job_timeout: '10'
+      kselftest_collections: "core"
+    filters: *kselftest_no_fragment
+
   kselftest-cpufreq:
     <<: *kselftest
     params:
@@ -2025,6 +2032,7 @@ test_configs:
       - kselftest-capabilities
       - kselftest-cgroup
       - kselftest-clone3
+      - kselftest-core
       - kselftest-lkdtm
       - kselftest-seccomp
       - ltp-fcntl-locktests
@@ -2039,6 +2047,7 @@ test_configs:
       - kselftest-capabilities
       - kselftest-cgroup
       - kselftest-clone3
+      - kselftest-core
       - kselftest-filesystems
       - kselftest-futex
       - kselftest-rtc
@@ -2056,6 +2065,7 @@ test_configs:
       - kselftest-capabilities
       - kselftest-cgroup
       - kselftest-clone3
+      - kselftest-core
       - kselftest-filesystems
       - kselftest-futex
       - kselftest-lib
@@ -2081,6 +2091,7 @@ test_configs:
       - kselftest-capabilities
       - kselftest-cgroup
       - kselftest-clone3
+      - kselftest-core
       - kselftest-lib
       - kselftest-vm
       - ltp-ipc
@@ -2232,6 +2243,7 @@ test_configs:
       - kselftest-capabilities
       - kselftest-cgroup
       - kselftest-clone3
+      - kselftest-core
       - kselftest-filesystems
       - kselftest-futex
       - kselftest-lib
@@ -2260,6 +2272,7 @@ test_configs:
       - kselftest-capabilities
       - kselftest-cgroup
       - kselftest-clone3
+      - kselftest-core
       - kselftest-cpufreq
 
   - device_type: hp-x360-12b-ca0500na-n4000-octopus
@@ -2272,6 +2285,7 @@ test_configs:
       - kselftest-capabilities
       - kselftest-cgroup
       - kselftest-clone3
+      - kselftest-core
       - kselftest-lib
 
   - device_type: hp-x360-12b-ca0010nr-n4020-octopus
@@ -2285,6 +2299,7 @@ test_configs:
       - kselftest-capabilities
       - kselftest-cgroup
       - kselftest-clone3
+      - kselftest-core
       - kselftest-filesystems
       - kselftest-futex
       - kselftest-lib
@@ -2618,6 +2633,7 @@ test_configs:
       - kselftest-capabilities
       - kselftest-cgroup
       - kselftest-clone3
+      - kselftest-core
       - kselftest-cpufreq
       - kselftest-filesystems
       - kselftest-futex
@@ -2645,6 +2661,7 @@ test_configs:
       - kselftest-capabilities
       - kselftest-cgroup
       - kselftest-clone3
+      - kselftest-core
       - kselftest-lkdtm
       - kselftest-seccomp
 
@@ -2853,6 +2870,7 @@ test_configs:
       - kselftest-capabilities
       - kselftest-cgroup
       - kselftest-clone3
+      - kselftest-core
       - ltp-timers
       - sleep
       - usb
@@ -2872,6 +2890,7 @@ test_configs:
       - kselftest-capabilities
       - kselftest-cgroup
       - kselftest-clone3
+      - kselftest-core
       - kselftest-rtc
       - ltp-fcntl-locktests
       - ltp-pty
@@ -2916,6 +2935,7 @@ test_configs:
       - kselftest-capabilities
       - kselftest-cgroup
       - kselftest-clone3
+      - kselftest-core
 
   - device_type: snow
     test_plans:
