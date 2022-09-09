@@ -397,7 +397,7 @@ class cmd_make_kselftest(MakeCommand):
 class cmd_push_kernel(Command):
     help = "Push the kernel build artifacts"
     args = [Args.kdir, Args.api, Args.db_token]
-    opt_args = [Args.output, Args.db_config, Args.install_path]
+    opt_args = [Args.output, Args.db_config, Args.install_path, Args.omit_publish_path]
 
     def __call__(self, configs, args):
         install = kernelci.build.Step.get_install_path(args.kdir, args.output, args.install_path)
