@@ -2047,6 +2047,7 @@ test_configs:
       - kselftest-core
       - kselftest-cpufreq
       - kselftest-efivarfs
+      - kselftest-exec
       - kselftest-lkdtm
       - kselftest-seccomp
       - ltp-fcntl-locktests
@@ -2064,6 +2065,7 @@ test_configs:
       - kselftest-core
       - kselftest-cpufreq
       - kselftest-efivarfs
+      - kselftest-exec
       - kselftest-filesystems
       - kselftest-futex
       - kselftest-rtc
@@ -2084,6 +2086,7 @@ test_configs:
       - kselftest-core
       - kselftest-cpufreq
       - kselftest-efivarfs
+      - kselftest-exec
       - kselftest-filesystems
       - kselftest-futex
       - kselftest-lib
@@ -2112,6 +2115,7 @@ test_configs:
       - kselftest-core
       - kselftest-cpufreq
       - kselftest-efivarfs
+      - kselftest-exec
       - kselftest-lib
       - kselftest-vm
       - ltp-ipc
@@ -2266,6 +2270,7 @@ test_configs:
       - kselftest-core
       - kselftest-cpufreq
       - kselftest-efivarfs
+      - kselftest-exec
       - kselftest-filesystems
       - kselftest-futex
       - kselftest-lib
@@ -2297,6 +2302,7 @@ test_configs:
       - kselftest-core
       - kselftest-cpufreq
       - kselftest-efivarfs
+      - kselftest-exec
 
   - device_type: hp-x360-12b-ca0500na-n4000-octopus
     test_plans:
@@ -2311,6 +2317,7 @@ test_configs:
       - kselftest-core
       - kselftest-cpufreq
       - kselftest-efivarfs
+      - kselftest-exec
       - kselftest-lib
 
   - device_type: hp-x360-12b-ca0010nr-n4020-octopus
@@ -2327,6 +2334,7 @@ test_configs:
       - kselftest-core
       - kselftest-cpufreq
       - kselftest-efivarfs
+      - kselftest-exec
       - kselftest-filesystems
       - kselftest-futex
       - kselftest-lib
@@ -2662,6 +2670,7 @@ test_configs:
       - kselftest-clone3
       - kselftest-core
       - kselftest-cpufreq
+      - kselftest-exec
       - kselftest-filesystems
       - kselftest-futex
       - kselftest-lib
@@ -2690,6 +2699,7 @@ test_configs:
       - kselftest-clone3
       - kselftest-core
       - kselftest-cpufreq
+      - kselftest-exec
       - kselftest-lkdtm
       - kselftest-seccomp
 
@@ -2900,6 +2910,7 @@ test_configs:
       - kselftest-clone3
       - kselftest-core
       - kselftest-cpufreq
+      - kselftest-exec
       - ltp-timers
       - sleep
       - usb
@@ -2921,6 +2932,7 @@ test_configs:
       - kselftest-clone3
       - kselftest-core
       - kselftest-cpufreq
+      - kselftest-exec
       - kselftest-rtc
       - ltp-fcntl-locktests
       - ltp-pty
@@ -2967,6 +2979,7 @@ test_configs:
       - kselftest-clone3
       - kselftest-core
       - kselftest-cpufreq
+      - kselftest-exec
 
   - device_type: snow
     test_plans:
