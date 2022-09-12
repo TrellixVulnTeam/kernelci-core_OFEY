@@ -2048,6 +2048,7 @@ test_configs:
       - kselftest-cpufreq
       - kselftest-efivarfs
       - kselftest-exec
+      - kselftest-filesystems
       - kselftest-lkdtm
       - kselftest-seccomp
       - ltp-fcntl-locktests
@@ -2116,6 +2117,7 @@ test_configs:
       - kselftest-cpufreq
       - kselftest-efivarfs
       - kselftest-exec
+      - kselftest-filesystems
       - kselftest-lib
       - kselftest-vm
       - ltp-ipc
@@ -2303,6 +2305,7 @@ test_configs:
       - kselftest-cpufreq
       - kselftest-efivarfs
       - kselftest-exec
+      - kselftest-filesystems
 
   - device_type: hp-x360-12b-ca0500na-n4000-octopus
     test_plans:
@@ -2318,6 +2321,7 @@ test_configs:
       - kselftest-cpufreq
       - kselftest-efivarfs
       - kselftest-exec
+      - kselftest-filesystems
       - kselftest-lib
 
   - device_type: hp-x360-12b-ca0010nr-n4020-octopus
@@ -2700,6 +2704,7 @@ test_configs:
       - kselftest-core
       - kselftest-cpufreq
       - kselftest-exec
+      - kselftest-filesystems
       - kselftest-lkdtm
       - kselftest-seccomp
 
@@ -2911,6 +2916,7 @@ test_configs:
       - kselftest-core
       - kselftest-cpufreq
       - kselftest-exec
+      - kselftest-filesystems
       - ltp-timers
       - sleep
       - usb
@@ -2933,6 +2939,7 @@ test_configs:
       - kselftest-core
       - kselftest-cpufreq
       - kselftest-exec
+      - kselftest-filesystems
       - kselftest-rtc
       - ltp-fcntl-locktests
       - ltp-pty
@@ -2980,6 +2987,7 @@ test_configs:
       - kselftest-core
       - kselftest-cpufreq
       - kselftest-exec
+      - kselftest-filesystems
 
   - device_type: snow
     test_plans:
