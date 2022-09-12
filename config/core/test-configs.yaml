@@ -392,6 +392,12 @@ test_plans:
       kselftest_collections: "futex"
     filters: *kselftest_no_fragment
 
+  kselftest-gpio:
+    <<: *kselftest
+    params:
+      job_timeout: '10'
+      kselftest_collections: "gpio"
+
   kselftest-kcmp:
     <<: *kselftest
     params:
@@ -2072,6 +2078,7 @@ test_configs:
       - kselftest-firmware
       - kselftest-ftrace
       - kselftest-futex
+      - kselftest-gpio
       - kselftest-lkdtm
       - kselftest-seccomp
       - ltp-fcntl-locktests
@@ -2095,6 +2102,7 @@ test_configs:
       - kselftest-firmware
       - kselftest-ftrace
       - kselftest-futex
+      - kselftest-gpio
       - kselftest-rtc
       - ltp-ipc
       - ltp-mm
@@ -2119,6 +2127,7 @@ test_configs:
       - kselftest-firmware
       - kselftest-ftrace
       - kselftest-futex
+      - kselftest-gpio
       - kselftest-lib
       - kselftest-lkdtm
       - kselftest-seccomp
@@ -2151,6 +2160,7 @@ test_configs:
       - kselftest-firmware
       - kselftest-ftrace
       - kselftest-futex
+      - kselftest-gpio
       - kselftest-lib
       - kselftest-vm
       - ltp-ipc
@@ -2311,6 +2321,7 @@ test_configs:
       - kselftest-firmware
       - kselftest-ftrace
       - kselftest-futex
+      - kselftest-gpio
       - kselftest-lib
       - kselftest-livepatch
       - kselftest-lkdtm
@@ -2346,6 +2357,7 @@ test_configs:
       - kselftest-firmware
       - kselftest-ftrace
       - kselftest-futex
+      - kselftest-gpio
 
   - device_type: hp-x360-12b-ca0500na-n4000-octopus
     test_plans:
@@ -2366,6 +2378,7 @@ test_configs:
       - kselftest-firmware
       - kselftest-ftrace
       - kselftest-futex
+      - kselftest-gpio
       - kselftest-lib
 
   - device_type: hp-x360-12b-ca0010nr-n4020-octopus
@@ -2388,6 +2401,7 @@ test_configs:
       - kselftest-firmware
       - kselftest-ftrace
       - kselftest-futex
+      - kselftest-gpio
       - kselftest-lib
       - ltp-crypto
       - ltp-ipc
@@ -2727,6 +2741,7 @@ test_configs:
       - kselftest-firmware
       - kselftest-ftrace
       - kselftest-futex
+      - kselftest-gpio
       - kselftest-lib
       - kselftest-livepatch
       - kselftest-lkdtm
@@ -2759,6 +2774,7 @@ test_configs:
       - kselftest-firmware
       - kselftest-ftrace
       - kselftest-futex
+      - kselftest-gpio
       - kselftest-lkdtm
       - kselftest-seccomp
 
@@ -2975,6 +2991,7 @@ test_configs:
       - kselftest-firmware
       - kselftest-ftrace
       - kselftest-futex
+      - kselftest-gpio
       - ltp-timers
       - sleep
       - usb
@@ -3002,6 +3019,7 @@ test_configs:
       - kselftest-firmware
       - kselftest-ftrace
       - kselftest-futex
+      - kselftest-gpio
       - kselftest-rtc
       - ltp-fcntl-locktests
       - ltp-pty
@@ -3054,6 +3072,7 @@ test_configs:
       - kselftest-firmware
       - kselftest-ftrace
       - kselftest-futex
+      - kselftest-gpio
 
   - device_type: snow
     test_plans:
