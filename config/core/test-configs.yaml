@@ -2128,6 +2128,7 @@ test_configs:
       - kselftest-kvm
       - kselftest-lib
       - kselftest-livepatch
+      - kselftest-lkdtm
       - kselftest-rtc
       - ltp-ipc
       - ltp-mm
@@ -2197,6 +2198,7 @@ test_configs:
       - kselftest-kvm
       - kselftest-lib
       - kselftest-livepatch
+      - kselftest-lkdtm
       - kselftest-vm
       - ltp-ipc
 
@@ -2430,6 +2432,7 @@ test_configs:
       - kselftest-kvm
       - kselftest-lib
       - kselftest-livepatch
+      - kselftest-lkdtm
 
   - device_type: hp-x360-12b-ca0010nr-n4020-octopus
     test_plans:
@@ -2458,6 +2461,7 @@ test_configs:
       - kselftest-kvm
       - kselftest-lib
       - kselftest-livepatch
+      - kselftest-lkdtm
       - ltp-crypto
       - ltp-ipc
       - ltp-mm
@@ -3059,6 +3063,7 @@ test_configs:
       - kselftest-kcmp
       - kselftest-lib
       - kselftest-livepatch
+      - kselftest-lkdtm
       - ltp-timers
       - sleep
       - usb
@@ -3092,6 +3097,7 @@ test_configs:
       - kselftest-kvm
       - kselftest-lib
       - kselftest-livepatch
+      - kselftest-lkdtm
       - kselftest-rtc
       - ltp-fcntl-locktests
       - ltp-pty
@@ -3150,6 +3156,7 @@ test_configs:
       - kselftest-kvm
       - kselftest-lib
       - kselftest-livepatch
+      - kselftest-lkdtm
 
   - device_type: snow
     test_plans:
