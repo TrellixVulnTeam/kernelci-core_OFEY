@@ -121,10 +121,7 @@ class cmd_list_jobs(Command):
             print("Either --build-output or --install-path is required")
             return False
 
-        install = (
-            args.install_path if args.install_path else
-            kernelci.build.Step.get_install_path(None, args.build_output)
-        )
+        install = kernelci.build.Step.get_install_path(None, args.build_output, args.install_path)
         meta = kernelci.build.Metadata(install)
 
         if meta.get('bmeta', 'build', 'status') != "PASS":
@@ -198,7 +195,7 @@ class cmd_generate(Command):
                 Args.lab_json, Args.user, Args.lab_token, Args.db_config,
                 Args.callback_id, Args.callback_dataset,
                 Args.callback_type, Args.callback_url, Args.mach,
-                Args.device_id]
+                Args.device_id, Args.omit_publish_path, Args.storage_auth]
 
     def __call__(self, configs, args):
         if args.callback_id and not args.callback_url:
@@ -210,10 +207,7 @@ class cmd_generate(Command):
             print("Either --build-output or --install-path is required")
             return False
 
-        install = (
-            args.install_path
-            or kernelci.build.Step.get_install_path(None, args.build_output)
-        )
+        install = kernelci.build.Step.get_install_path(None, args.build_output, args.install_path)
         meta = kernelci.build.Metadata(install)
 
         if meta.get('bmeta', 'build', 'status') != "PASS":
@@ -256,7 +250,7 @@ class cmd_generate(Command):
         for device_config, plan_config in jobs_list:
             params = kernelci.test.get_params(
                 meta, device_config, plan_config, args.storage,
-                args.device_id)
+                args.device_id, args.omit_publish_path, args.storage_auth)
             job = lab_api.generate(params, device_config, plan_config,
                                    callback_opts)
             if job is None:

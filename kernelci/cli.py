@@ -223,6 +223,12 @@ class Args:
         'help': "Path to log file",
     }
 
+    omit_publish_path = {
+        'name': '--omit-publish-path',
+        'help': "Do not extend the given storage URL with the publish path",
+        'action': 'store_true',
+    }
+
     mach = {
         'name': '--mach',
         'help': "Mach name (aka SoC family)",
@@ -285,6 +291,11 @@ class Args:
     storage = {
         'name': '--storage',
         'help': "Storage URL",
+    }
+
+    storage_auth = {
+        'name': '--storage-auth',
+        'help': "Authorization as a KEY=VALUE pair for access to storage",
     }
 
     target = {
