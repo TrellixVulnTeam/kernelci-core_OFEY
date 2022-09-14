@@ -488,6 +488,12 @@ test_plans:
       job_timeout: '10'
       kselftest_collections: "nsfs"
 
+  kselftest-pidfd:
+    <<: *kselftest
+    params:
+      job_timeout: '10'
+      kselftest_collections: "pidfd"
+
   kselftest-openat2:
     <<: *kselftest
     params:
@@ -2130,6 +2136,7 @@ test_configs:
       - kselftest-mqueue
       - kselftest-nci
       - kselftest-nsfs
+      - kselftest-pidfd
       - kselftest-seccomp
       - ltp-fcntl-locktests
       - ltp-pty
@@ -2166,6 +2173,7 @@ test_configs:
       - kselftest-mqueue
       - kselftest-nci
       - kselftest-nsfs
+      - kselftest-pidfd
       - kselftest-rtc
       - ltp-ipc
       - ltp-mm
@@ -2204,6 +2212,7 @@ test_configs:
       - kselftest-mqueue
       - kselftest-nci
       - kselftest-nsfs
+      - kselftest-pidfd
       - kselftest-seccomp
       - ltp-crypto
       - ltp-fcntl-locktests
@@ -2248,6 +2257,7 @@ test_configs:
       - kselftest-mincore
       - kselftest-nci
       - kselftest-nsfs
+      - kselftest-pidfd
       - kselftest-vm
       - ltp-ipc
 
@@ -2422,6 +2432,7 @@ test_configs:
       - kselftest-mqueue
       - kselftest-nci
       - kselftest-nsfs
+      - kselftest-pidfd
       - kselftest-rtc
       - kselftest-seccomp
       - kselftest-tpm2
@@ -2467,6 +2478,7 @@ test_configs:
       - kselftest-mqueue
       - kselftest-nci
       - kselftest-nsfs
+      - kselftest-pidfd
 
   - device_type: hp-x360-12b-ca0500na-n4000-octopus
     test_plans:
@@ -2501,6 +2513,7 @@ test_configs:
       - kselftest-mqueue
       - kselftest-nci
       - kselftest-nsfs
+      - kselftest-pidfd
 
   - device_type: hp-x360-12b-ca0010nr-n4020-octopus
     test_plans:
@@ -2536,6 +2549,7 @@ test_configs:
       - kselftest-mqueue
       - kselftest-nci
       - kselftest-nsfs
+      - kselftest-pidfd
       - ltp-crypto
       - ltp-ipc
       - ltp-mm
@@ -2887,6 +2901,7 @@ test_configs:
       - kselftest-mqueue
       - kselftest-nci
       - kselftest-nsfs
+      - kselftest-pidfd
       - kselftest-rtc
       - kselftest-seccomp
       - lc-compliance
@@ -2929,6 +2944,7 @@ test_configs:
       - kselftest-mqueue
       - kselftest-nci
       - kselftest-nsfs
+      - kselftest-pidfd
       - kselftest-seccomp
 
   - device_type: mustang
@@ -3156,6 +3172,7 @@ test_configs:
       - kselftest-mqueue
       - kselftest-nci
       - kselftest-nsfs
+      - kselftest-pidfd
       - ltp-timers
       - sleep
       - usb
@@ -3196,6 +3213,7 @@ test_configs:
       - kselftest-mqueue
       - kselftest-nci
       - kselftest-nsfs
+      - kselftest-pidfd
       - kselftest-rtc
       - ltp-fcntl-locktests
       - ltp-pty
@@ -3261,6 +3279,7 @@ test_configs:
       - kselftest-mqueue
       - kselftest-nci
       - kselftest-nsfs
+      - kselftest-pidfd
 
   - device_type: snow
     test_plans:
