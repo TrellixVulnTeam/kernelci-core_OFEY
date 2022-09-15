@@ -2222,6 +2222,7 @@ test_configs:
       - kselftest-tpm2
       - kselftest-user
       - kselftest-vdso
+      - kselftest-vm
       - ltp-fcntl-locktests
       - ltp-pty
       - ltp-timers
@@ -2273,6 +2274,7 @@ test_configs:
       - kselftest-tpm2
       - kselftest-user
       - kselftest-vdso
+      - kselftest-vm
       - ltp-ipc
       - ltp-mm
       - ltp-timers
@@ -2327,6 +2329,7 @@ test_configs:
       - kselftest-tpm2
       - kselftest-user
       - kselftest-vdso
+      - kselftest-vm
       - ltp-crypto
       - ltp-fcntl-locktests
       - ltp-ima
@@ -2637,6 +2640,7 @@ test_configs:
       - kselftest-tpm2
       - kselftest-user
       - kselftest-vdso
+      - kselftest-vm
 
   - device_type: hp-x360-12b-ca0500na-n4000-octopus
     test_plans:
@@ -2688,6 +2692,7 @@ test_configs:
       - kselftest-tpm2
       - kselftest-user
       - kselftest-vdso
+      - kselftest-vm
 
   - device_type: hp-x360-12b-ca0010nr-n4020-octopus
     test_plans:
@@ -2740,6 +2745,7 @@ test_configs:
       - kselftest-tpm2
       - kselftest-user
       - kselftest-vdso
+      - kselftest-vm
       - ltp-crypto
       - ltp-ipc
       - ltp-mm
@@ -3107,6 +3113,7 @@ test_configs:
       - kselftest-tmpfs
       - kselftest-tpm2
       - kselftest-user
+      - kselftest-vm
       - lc-compliance
       - ltp-crypto
       - ltp-fcntl-locktests
@@ -3163,6 +3170,7 @@ test_configs:
       - kselftest-tmpfs
       - kselftest-tpm2
       - kselftest-user
+      - kselftest-vm
 
   - device_type: mustang
     test_plans:
@@ -3405,6 +3413,7 @@ test_configs:
       - kselftest-tmpfs
       - kselftest-tpm2
       - kselftest-user
+      - kselftest-vm
       - ltp-timers
       - sleep
       - usb
@@ -3461,6 +3470,7 @@ test_configs:
       - kselftest-tmpfs
       - kselftest-tpm2
       - kselftest-user
+      - kselftest-vm
       - ltp-fcntl-locktests
       - ltp-pty
       - ltp-timers
@@ -3541,6 +3551,7 @@ test_configs:
       - kselftest-tmpfs
       - kselftest-tpm2
       - kselftest-user
+      - kselftest-vm
 
   - device_type: snow
     test_plans:
