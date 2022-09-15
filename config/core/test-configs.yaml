@@ -590,6 +590,13 @@ test_plans:
       job_timeout: '10'
       kselftest_collections: "user"
 
+  kselftest-vdso:
+    <<: *kselftest
+    params:
+      job_timeout: '10'
+      kselftest_collections: "vDSO"
+    filters: *kselftest_no_fragment
+
   kselftest-vm:
     <<: *kselftest
     params:
@@ -2214,6 +2221,7 @@ test_configs:
       - kselftest-tmpfs
       - kselftest-tpm2
       - kselftest-user
+      - kselftest-vdso
       - ltp-fcntl-locktests
       - ltp-pty
       - ltp-timers
@@ -2264,6 +2272,7 @@ test_configs:
       - kselftest-tmpfs
       - kselftest-tpm2
       - kselftest-user
+      - kselftest-vdso
       - ltp-ipc
       - ltp-mm
       - ltp-timers
@@ -2317,6 +2326,7 @@ test_configs:
       - kselftest-tmpfs
       - kselftest-tpm2
       - kselftest-user
+      - kselftest-vdso
       - ltp-crypto
       - ltp-fcntl-locktests
       - ltp-ima
@@ -2376,6 +2386,7 @@ test_configs:
       - kselftest-tmpfs
       - kselftest-tpm2
       - kselftest-user
+      - kselftest-vdso
       - kselftest-vm
       - ltp-ipc
 
@@ -2566,6 +2577,7 @@ test_configs:
       - kselftest-tmpfs
       - kselftest-tpm2
       - kselftest-user
+      - kselftest-vdso
       - kselftest-vm
       - ltp-crypto
       - ltp-fcntl-locktests
@@ -2624,6 +2636,7 @@ test_configs:
       - kselftest-tmpfs
       - kselftest-tpm2
       - kselftest-user
+      - kselftest-vdso
 
   - device_type: hp-x360-12b-ca0500na-n4000-octopus
     test_plans:
@@ -2674,6 +2687,7 @@ test_configs:
       - kselftest-tmpfs
       - kselftest-tpm2
       - kselftest-user
+      - kselftest-vdso
 
   - device_type: hp-x360-12b-ca0010nr-n4020-octopus
     test_plans:
@@ -2725,6 +2739,7 @@ test_configs:
       - kselftest-tmpfs
       - kselftest-tpm2
       - kselftest-user
+      - kselftest-vdso
       - ltp-crypto
       - ltp-ipc
       - ltp-mm
