@@ -533,6 +533,12 @@ test_plans:
       job_timeout: '10'
       kselftest_collections: "seccomp"
 
+  kselftest-static-keys:
+    <<: *kselftest
+    params:
+      job_timeout: '10'
+      kselftest_collections: "static-keys"
+
   kselftest-timers:
     <<: *kselftest
     params:
@@ -2162,6 +2168,7 @@ test_configs:
       - kselftest-rlimits
       - kselftest-rtc
       - kselftest-seccomp
+      - kselftest-static-keys
       - ltp-fcntl-locktests
       - ltp-pty
       - ltp-timers
@@ -2203,6 +2210,7 @@ test_configs:
       - kselftest-rlimits
       - kselftest-rtc
       - kselftest-seccomp
+      - kselftest-static-keys
       - ltp-ipc
       - ltp-mm
       - ltp-timers
@@ -2247,6 +2255,7 @@ test_configs:
       - kselftest-rlimits
       - kselftest-rtc
       - kselftest-seccomp
+      - kselftest-static-keys
       - ltp-crypto
       - ltp-fcntl-locktests
       - ltp-ima
@@ -2297,6 +2306,7 @@ test_configs:
       - kselftest-rlimits
       - kselftest-rtc
       - kselftest-seccomp
+      - kselftest-static-keys
       - kselftest-vm
       - ltp-ipc
 
@@ -2478,6 +2488,7 @@ test_configs:
       - kselftest-rlimits
       - kselftest-rtc
       - kselftest-seccomp
+      - kselftest-static-keys
       - kselftest-tpm2
       - kselftest-vm
       - ltp-crypto
@@ -2528,6 +2539,7 @@ test_configs:
       - kselftest-rlimits
       - kselftest-rtc
       - kselftest-seccomp
+      - kselftest-static-keys
 
   - device_type: hp-x360-12b-ca0500na-n4000-octopus
     test_plans:
@@ -2569,6 +2581,7 @@ test_configs:
       - kselftest-rlimits
       - kselftest-rtc
       - kselftest-seccomp
+      - kselftest-static-keys
 
   - device_type: hp-x360-12b-ca0010nr-n4020-octopus
     test_plans:
@@ -2611,6 +2624,7 @@ test_configs:
       - kselftest-rlimits
       - kselftest-rtc
       - kselftest-seccomp
+      - kselftest-static-keys
       - ltp-crypto
       - ltp-ipc
       - ltp-mm
@@ -2969,6 +2983,7 @@ test_configs:
       - kselftest-rlimits
       - kselftest-rtc
       - kselftest-seccomp
+      - kselftest-static-keys
       - lc-compliance
       - ltp-crypto
       - ltp-fcntl-locktests
@@ -3016,6 +3031,7 @@ test_configs:
       - kselftest-rlimits
       - kselftest-rtc
       - kselftest-seccomp
+      - kselftest-static-keys
 
   - device_type: mustang
     test_plans:
@@ -3249,6 +3265,7 @@ test_configs:
       - kselftest-rlimits
       - kselftest-rtc
       - kselftest-seccomp
+      - kselftest-static-keys
       - ltp-timers
       - sleep
       - usb
@@ -3296,6 +3313,7 @@ test_configs:
       - kselftest-rlimits
       - kselftest-rtc
       - kselftest-seccomp
+      - kselftest-static-keys
       - ltp-fcntl-locktests
       - ltp-pty
       - ltp-timers
@@ -3367,6 +3385,7 @@ test_configs:
       - kselftest-rlimits
       - kselftest-rtc
       - kselftest-seccomp
+      - kselftest-static-keys
 
   - device_type: snow
     test_plans:
