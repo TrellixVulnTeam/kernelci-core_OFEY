@@ -327,11 +327,30 @@ test_plans:
       kselftest_collections: "clone3"
     filters: *kselftest_no_fragment
 
+  kselftest-core:
+    <<: *kselftest
+    params:
+      job_timeout: '10'
+      kselftest_collections: "core"
+    filters: *kselftest_no_fragment
+
   kselftest-cpufreq:
     <<: *kselftest
     params:
       job_timeout: '10'
       kselftest_collections: "cpufreq"
+
+  kselftest-drivers-dmabuf:
+    <<: *kselftest
+    params:
+      job_timeout: '10'
+      kselftest_collections: "drivers/dma-buf"
+
+  kselftest-efivarfs:
+    <<: *kselftest
+    params:
+      job_timeout: '10'
+      kselftest_collections: "efivarfs"
 
   kselftest-exec:
     <<: *kselftest
@@ -347,12 +366,50 @@ test_plans:
       kselftest_collections: "filesystems"
     filters: *kselftest_no_fragment
 
+  kselftest-filesystems-epoll:
+    <<: *kselftest
+    params:
+      job_timeout: '10'
+      kselftest_collections: "filesystems/epoll"
+    filters: *kselftest_no_fragment
+
+  kselftest-firmware:
+    <<: *kselftest
+    params:
+      job_timeout: '10'
+      kselftest_collections: "firmware"
+
+  kselftest-ftrace:
+    <<: *kselftest
+    params:
+      job_timeout: '10'
+      kselftest_collections: "ftrace"
+
   kselftest-futex:
     <<: *kselftest
     params:
       job_timeout: '10'
       kselftest_collections: "futex"
     filters: *kselftest_no_fragment
+
+  kselftest-gpio:
+    <<: *kselftest
+    params:
+      job_timeout: '10'
+      kselftest_collections: "gpio"
+
+  kselftest-intel_pstate:
+    <<: *kselftest
+    params:
+      job_timeout: '10'
+      kselftest_collections: "intel_pstate"
+    filters: *kselftest_no_fragment
+
+  kselftest-ipc:
+    <<: *kselftest
+    params:
+      job_timeout: '10'
+      kselftest_collections: "ipc"
 
   kselftest-kcmp:
     <<: *kselftest
@@ -400,11 +457,55 @@ test_plans:
       kselftest_collections: "mincore"
     filters: *kselftest_no_fragment
 
+  kselftest-mount:
+    <<: *kselftest
+    params:
+      job_timeout: '10'
+      kselftest_collections: "mount"
+
+  kselftest-mqueue:
+    <<: *kselftest
+    params:
+      job_timeout: '10'
+      kselftest_collections: "mqueue"
+    filters: *kselftest_no_fragment
+
+  kselftest-nci:
+    <<: *kselftest
+    params:
+      job_timeout: '10'
+      kselftest_collections: "nci"
+
   kselftest-net:
     <<: *kselftest
     params:
       job_timeout: '10'
       kselftest_collections: "net"
+
+  kselftest-nsfs:
+    <<: *kselftest
+    params:
+      job_timeout: '10'
+      kselftest_collections: "nsfs"
+
+  kselftest-pidfd:
+    <<: *kselftest
+    params:
+      job_timeout: '10'
+      kselftest_collections: "pidfd"
+
+  kselftest-pid-namespace:
+    <<: *kselftest
+    params:
+      job_timeout: '10'
+      kselftest_collections: "pid_namespace"
+
+  kselftest-ptrace:
+    <<: *kselftest
+    params:
+      job_timeout: '10'
+      kselftest_collections: "ptrace"
+    filters: *kselftest_no_fragment
 
   kselftest-openat2:
     <<: *kselftest
@@ -412,6 +513,12 @@ test_plans:
       job_timeout: '10'
       kselftest_collections: "openat2"
     filters: *kselftest_no_fragment
+
+  kselftest-rlimits:
+    <<: *kselftest
+    params:
+      job_timeout: '10'
+      kselftest_collections: "rlimits"
 
   kselftest-rtc:
     <<: *kselftest
@@ -426,11 +533,48 @@ test_plans:
       job_timeout: '10'
       kselftest_collections: "seccomp"
 
+  kselftest-static-keys:
+    <<: *kselftest
+    params:
+      job_timeout: '10'
+      kselftest_collections: "static-keys"
+
+  kselftest-sync:
+    <<: *kselftest
+    params:
+      job_timeout: '10'
+      kselftest_collections: "sync"
+
+  kselftest-syscall-user-dispatch:
+    <<: *kselftest
+    params:
+      job_timeout: '10'
+      kselftest_collections: "syscall_user_dispatch"
+
+  kselftest-sysctl:
+    <<: *kselftest
+    params:
+      job_timeout: '10'
+      kselftest_collections: "sysctl"
+
+  kselftest-timens:
+    <<: *kselftest
+    params:
+      job_timeout: '10'
+      kselftest_collections: "timens"
+
   kselftest-timers:
     <<: *kselftest
     params:
       job_timeout: '15'
       kselftest_collections: "timers"
+    filters: *kselftest_no_fragment
+
+  kselftest-tmpfs:
+    <<: *kselftest
+    params:
+      job_timeout: '10'
+      kselftest_collections: "tmpfs"
     filters: *kselftest_no_fragment
 
   kselftest-tpm2:
@@ -440,11 +584,31 @@ test_plans:
       kselftest_collections: "tpm2"
     filters: *kselftest_no_fragment
 
+  kselftest-user:
+    <<: *kselftest
+    params:
+      job_timeout: '10'
+      kselftest_collections: "user"
+
+  kselftest-vdso:
+    <<: *kselftest
+    params:
+      job_timeout: '10'
+      kselftest_collections: "vDSO"
+    filters: *kselftest_no_fragment
+
   kselftest-vm:
     <<: *kselftest
     params:
       job_timeout: '10'
       kselftest_collections: "vm"
+
+  kselftest-x86:
+    <<: *kselftest
+    params:
+      job_timeout: '10'
+      kselftest_collections: "x86"
+    filters: *kselftest_no_fragment
 
   lc-compliance:
     rootfs: debian_bullseye-libcamera_nfs
@@ -2022,8 +2186,51 @@ test_configs:
       - baseline
       - baseline-nfs
       - kselftest-alsa
+      - kselftest-capabilities
+      - kselftest-cgroup
+      - kselftest-clone3
+      - kselftest-core
+      - kselftest-cpufreq
+      - kselftest-efivarfs
+      - kselftest-exec
+      - kselftest-filesystems
+      - kselftest-filesystems-epoll
+      - kselftest-firmware
+      - kselftest-ftrace
+      - kselftest-futex
+      - kselftest-gpio
+      - kselftest-intel_pstate
+      - kselftest-ipc
+      - kselftest-kcmp
+      - kselftest-kvm
+      - kselftest-lib
+      - kselftest-livepatch
       - kselftest-lkdtm
+      - kselftest-membarrier
+      - kselftest-mincore
+      - kselftest-mount
+      - kselftest-mqueue
+      - kselftest-nci
+      - kselftest-nsfs
+      - kselftest-openat2
+      - kselftest-pidfd
+      - kselftest-pid-namespace
+      - kselftest-ptrace
+      - kselftest-rlimits
+      - kselftest-rtc
       - kselftest-seccomp
+      - kselftest-static-keys
+      - kselftest-sync
+      - kselftest-syscall-user-dispatch
+      - kselftest-sysctl
+      - kselftest-timens
+      - kselftest-timers
+      - kselftest-tmpfs
+      - kselftest-tpm2
+      - kselftest-user
+      - kselftest-vdso
+      - kselftest-vm
+      - kselftest-x86
       - ltp-fcntl-locktests
       - ltp-pty
       - ltp-timers
@@ -2033,9 +2240,50 @@ test_configs:
       - baseline
       - baseline-nfs
       - kselftest-alsa
+      - kselftest-capabilities
+      - kselftest-cgroup
+      - kselftest-clone3
+      - kselftest-core
+      - kselftest-cpufreq
+      - kselftest-efivarfs
+      - kselftest-exec
       - kselftest-filesystems
+      - kselftest-filesystems-epoll
+      - kselftest-firmware
+      - kselftest-ftrace
       - kselftest-futex
+      - kselftest-gpio
+      - kselftest-intel_pstate
+      - kselftest-ipc
+      - kselftest-kcmp
+      - kselftest-kvm
+      - kselftest-lib
+      - kselftest-livepatch
+      - kselftest-lkdtm
+      - kselftest-membarrier
+      - kselftest-mincore
+      - kselftest-mount
+      - kselftest-mqueue
+      - kselftest-nci
+      - kselftest-nsfs
+      - kselftest-pidfd
+      - kselftest-pid-namespace
+      - kselftest-ptrace
+      - kselftest-rlimits
       - kselftest-rtc
+      - kselftest-seccomp
+      - kselftest-static-keys
+      - kselftest-sync
+      - kselftest-syscall-user-dispatch
+      - kselftest-sysctl
+      - kselftest-timens
+      - kselftest-timers
+      - kselftest-tmpfs
+      - kselftest-tpm2
+      - kselftest-user
+      - kselftest-vdso
+      - kselftest-vm
+      - kselftest-x86
       - ltp-ipc
       - ltp-mm
       - ltp-timers
@@ -2047,11 +2295,51 @@ test_configs:
       - cros-ec
       - igt-gpu-i915
       - kselftest-alsa
+      - kselftest-capabilities
+      - kselftest-cgroup
+      - kselftest-clone3
+      - kselftest-core
+      - kselftest-cpufreq
+      - kselftest-efivarfs
+      - kselftest-exec
       - kselftest-filesystems
+      - kselftest-filesystems-epoll
+      - kselftest-firmware
+      - kselftest-ftrace
       - kselftest-futex
+      - kselftest-gpio
+      - kselftest-intel_pstate
+      - kselftest-ipc
+      - kselftest-kcmp
+      - kselftest-kvm
       - kselftest-lib
+      - kselftest-livepatch
       - kselftest-lkdtm
+      - kselftest-membarrier
+      - kselftest-mincore
+      - kselftest-mount
+      - kselftest-mqueue
+      - kselftest-nci
+      - kselftest-nsfs
+      - kselftest-openat2
+      - kselftest-pidfd
+      - kselftest-pid-namespace
+      - kselftest-ptrace
+      - kselftest-rlimits
+      - kselftest-rtc
       - kselftest-seccomp
+      - kselftest-static-keys
+      - kselftest-sync
+      - kselftest-syscall-user-dispatch
+      - kselftest-sysctl
+      - kselftest-timens
+      - kselftest-timers
+      - kselftest-tmpfs
+      - kselftest-tpm2
+      - kselftest-user
+      - kselftest-vdso
+      - kselftest-vm
+      - kselftest-x86
       - ltp-crypto
       - ltp-fcntl-locktests
       - ltp-ima
@@ -2069,8 +2357,51 @@ test_configs:
       - baseline-nfs
       - cros-ec
       - kselftest-alsa
+      - kselftest-capabilities
+      - kselftest-cgroup
+      - kselftest-clone3
+      - kselftest-core
+      - kselftest-cpufreq
+      - kselftest-efivarfs
+      - kselftest-exec
+      - kselftest-filesystems
+      - kselftest-filesystems-epoll
+      - kselftest-firmware
+      - kselftest-ftrace
+      - kselftest-futex
+      - kselftest-gpio
+      - kselftest-intel_pstate
+      - kselftest-ipc
+      - kselftest-kcmp
+      - kselftest-kvm
       - kselftest-lib
+      - kselftest-livepatch
+      - kselftest-lkdtm
+      - kselftest-membarrier
+      - kselftest-mount
+      - kselftest-mqueue
+      - kselftest-mincore
+      - kselftest-nci
+      - kselftest-nsfs
+      - kselftest-openat2
+      - kselftest-pidfd
+      - kselftest-pid-namespace
+      - kselftest-ptrace
+      - kselftest-rlimits
+      - kselftest-rtc
+      - kselftest-seccomp
+      - kselftest-static-keys
+      - kselftest-sync
+      - kselftest-syscall-user-dispatch
+      - kselftest-sysctl
+      - kselftest-timens
+      - kselftest-timers
+      - kselftest-tmpfs
+      - kselftest-tpm2
+      - kselftest-user
+      - kselftest-vdso
       - kselftest-vm
+      - kselftest-x86
       - ltp-ipc
 
   - device_type: at91-sama5d2_xplained
@@ -2132,6 +2463,7 @@ test_configs:
       - kselftest-lib
       - kselftest-membarrier
       - kselftest-mincore
+      - kselftest-nci
       - kselftest-openat2
       - kselftest-seccomp
       - kselftest-timers
@@ -2217,15 +2549,51 @@ test_configs:
       - cros-ec
       - igt-gpu-amd
       - kselftest-alsa
+      - kselftest-capabilities
+      - kselftest-cgroup
+      - kselftest-clone3
+      - kselftest-core
+      - kselftest-cpufreq
+      - kselftest-efivarfs
+      - kselftest-exec
       - kselftest-filesystems
+      - kselftest-filesystems-epoll
+      - kselftest-firmware
+      - kselftest-ftrace
       - kselftest-futex
+      - kselftest-gpio
+      - kselftest-intel_pstate
+      - kselftest-ipc
+      - kselftest-kcmp
+      - kselftest-kvm
       - kselftest-lib
       - kselftest-livepatch
       - kselftest-lkdtm
+      - kselftest-membarrier
+      - kselftest-mincore
+      - kselftest-mount
+      - kselftest-mqueue
+      - kselftest-nci
+      - kselftest-nsfs
+      - kselftest-openat2
+      - kselftest-pidfd
+      - kselftest-pid-namespace
+      - kselftest-ptrace
+      - kselftest-rlimits
       - kselftest-rtc
       - kselftest-seccomp
+      - kselftest-static-keys
+      - kselftest-sync
+      - kselftest-syscall-user-dispatch
+      - kselftest-sysctl
+      - kselftest-timens
+      - kselftest-timers
+      - kselftest-tmpfs
       - kselftest-tpm2
+      - kselftest-user
+      - kselftest-vdso
       - kselftest-vm
+      - kselftest-x86
       - ltp-crypto
       - ltp-fcntl-locktests
       - ltp-ipc
@@ -2242,7 +2610,50 @@ test_configs:
       - baseline-nfs
       - cros-ec
       - kselftest-alsa
+      - kselftest-capabilities
+      - kselftest-cgroup
+      - kselftest-clone3
+      - kselftest-core
       - kselftest-cpufreq
+      - kselftest-efivarfs
+      - kselftest-exec
+      - kselftest-filesystems
+      - kselftest-filesystems-epoll
+      - kselftest-firmware
+      - kselftest-ftrace
+      - kselftest-futex
+      - kselftest-gpio
+      - kselftest-intel_pstate
+      - kselftest-ipc
+      - kselftest-kcmp
+      - kselftest-kvm
+      - kselftest-lib
+      - kselftest-livepatch
+      - kselftest-membarrier
+      - kselftest-mincore
+      - kselftest-mount
+      - kselftest-mqueue
+      - kselftest-nci
+      - kselftest-nsfs
+      - kselftest-openat2
+      - kselftest-pidfd
+      - kselftest-pid-namespace
+      - kselftest-ptrace
+      - kselftest-rlimits
+      - kselftest-rtc
+      - kselftest-seccomp
+      - kselftest-static-keys
+      - kselftest-sync
+      - kselftest-syscall-user-dispatch
+      - kselftest-sysctl
+      - kselftest-timens
+      - kselftest-timers
+      - kselftest-tmpfs
+      - kselftest-tpm2
+      - kselftest-user
+      - kselftest-vdso
+      - kselftest-vm
+      - kselftest-x86
 
   - device_type: hp-x360-12b-ca0500na-n4000-octopus
     test_plans:
@@ -2250,7 +2661,52 @@ test_configs:
       - baseline-nfs
       - cros-ec
       - igt-gpu-i915
+      - kselftest-alsa
+      - kselftest-capabilities
+      - kselftest-cgroup
+      - kselftest-clone3
+      - kselftest-core
+      - kselftest-cpufreq
+      - kselftest-efivarfs
+      - kselftest-exec
+      - kselftest-filesystems
+      - kselftest-filesystems-epoll
+      - kselftest-firmware
+      - kselftest-ftrace
+      - kselftest-futex
+      - kselftest-gpio
+      - kselftest-intel_pstate
+      - kselftest-ipc
+      - kselftest-kcmp
+      - kselftest-kvm
       - kselftest-lib
+      - kselftest-livepatch
+      - kselftest-lkdtm
+      - kselftest-membarrier
+      - kselftest-mincore
+      - kselftest-mount
+      - kselftest-mqueue
+      - kselftest-nci
+      - kselftest-nsfs
+      - kselftest-openat2
+      - kselftest-pidfd
+      - kselftest-pid-namespace
+      - kselftest-ptrace
+      - kselftest-rlimits
+      - kselftest-rtc
+      - kselftest-seccomp
+      - kselftest-static-keys
+      - kselftest-sync
+      - kselftest-syscall-user-dispatch
+      - kselftest-sysctl
+      - kselftest-timens
+      - kselftest-timers
+      - kselftest-tmpfs
+      - kselftest-tpm2
+      - kselftest-user
+      - kselftest-vdso
+      - kselftest-vm
+      - kselftest-x86
 
   - device_type: hp-x360-12b-ca0010nr-n4020-octopus
     test_plans:
@@ -2259,9 +2715,52 @@ test_configs:
       - baseline-nfs
       - cros-ec
       - igt-gpu-i915
+      - kselftest-alsa
+      - kselftest-capabilities
+      - kselftest-cgroup
+      - kselftest-clone3
+      - kselftest-core
+      - kselftest-cpufreq
+      - kselftest-efivarfs
+      - kselftest-exec
       - kselftest-filesystems
+      - kselftest-filesystems-epoll
+      - kselftest-firmware
+      - kselftest-ftrace
       - kselftest-futex
+      - kselftest-gpio
+      - kselftest-intel_pstate
+      - kselftest-ipc
+      - kselftest-kcmp
+      - kselftest-kvm
       - kselftest-lib
+      - kselftest-livepatch
+      - kselftest-lkdtm
+      - kselftest-membarrier
+      - kselftest-mincore
+      - kselftest-mount
+      - kselftest-mqueue
+      - kselftest-nci
+      - kselftest-nsfs
+      - kselftest-openat2
+      - kselftest-pidfd
+      - kselftest-pid-namespace
+      - kselftest-ptrace
+      - kselftest-rlimits
+      - kselftest-rtc
+      - kselftest-seccomp
+      - kselftest-static-keys
+      - kselftest-sync
+      - kselftest-syscall-user-dispatch
+      - kselftest-sysctl
+      - kselftest-timens
+      - kselftest-timers
+      - kselftest-tmpfs
+      - kselftest-tpm2
+      - kselftest-user
+      - kselftest-vdso
+      - kselftest-vm
+      - kselftest-x86
       - ltp-crypto
       - ltp-ipc
       - ltp-mm
@@ -2587,15 +3086,49 @@ test_configs:
       - baseline-cip-nfs
       - baseline-nfs
       - cros-ec
+      - kselftest-alsa
       - kselftest-arm64
+      - kselftest-capabilities
+      - kselftest-cgroup
+      - kselftest-clone3
+      - kselftest-core
       - kselftest-cpufreq
+      - kselftest-exec
       - kselftest-filesystems
+      - kselftest-filesystems-epoll
+      - kselftest-firmware
+      - kselftest-ftrace
       - kselftest-futex
+      - kselftest-gpio
+      - kselftest-ipc
+      - kselftest-kcmp
+      - kselftest-kvm
       - kselftest-lib
       - kselftest-livepatch
       - kselftest-lkdtm
+      - kselftest-membarrier
+      - kselftest-mincore
+      - kselftest-mount
+      - kselftest-mqueue
+      - kselftest-nci
+      - kselftest-nsfs
+      - kselftest-openat2
+      - kselftest-pidfd
+      - kselftest-pid-namespace
+      - kselftest-ptrace
+      - kselftest-rlimits
       - kselftest-rtc
       - kselftest-seccomp
+      - kselftest-static-keys
+      - kselftest-sync
+      - kselftest-syscall-user-dispatch
+      - kselftest-sysctl
+      - kselftest-timens
+      - kselftest-timers
+      - kselftest-tmpfs
+      - kselftest-tpm2
+      - kselftest-user
+      - kselftest-vm
       - lc-compliance
       - ltp-crypto
       - ltp-fcntl-locktests
@@ -2611,8 +3144,48 @@ test_configs:
     test_plans:
       - baseline
       - baseline-nfs
+      - kselftest-alsa
+      - kselftest-capabilities
+      - kselftest-cgroup
+      - kselftest-clone3
+      - kselftest-core
+      - kselftest-cpufreq
+      - kselftest-exec
+      - kselftest-filesystems
+      - kselftest-filesystems-epoll
+      - kselftest-firmware
+      - kselftest-ftrace
+      - kselftest-futex
+      - kselftest-gpio
+      - kselftest-ipc
+      - kselftest-kcmp
+      - kselftest-kvm
+      - kselftest-lib
+      - kselftest-livepatch
       - kselftest-lkdtm
+      - kselftest-membarrier
+      - kselftest-mincore
+      - kselftest-mount
+      - kselftest-mqueue
+      - kselftest-nci
+      - kselftest-nsfs
+      - kselftest-openat2
+      - kselftest-pidfd
+      - kselftest-pid-namespace
+      - kselftest-ptrace
+      - kselftest-rlimits
+      - kselftest-rtc
       - kselftest-seccomp
+      - kselftest-static-keys
+      - kselftest-sync
+      - kselftest-syscall-user-dispatch
+      - kselftest-sysctl
+      - kselftest-timens
+      - kselftest-timers
+      - kselftest-tmpfs
+      - kselftest-tpm2
+      - kselftest-user
+      - kselftest-vm
 
   - device_type: mustang
     test_plans:
@@ -2816,6 +3389,46 @@ test_configs:
       - igt-gpu-panfrost
       - igt-kms-rockchip
       # kselftest-alsa - Basic boot issue preventing testing
+      - kselftest-capabilities
+      - kselftest-cgroup
+      - kselftest-clone3
+      - kselftest-core
+      - kselftest-cpufreq
+      - kselftest-exec
+      - kselftest-filesystems
+      - kselftest-filesystems-epoll
+      - kselftest-firmware
+      - kselftest-ftrace
+      - kselftest-futex
+      - kselftest-gpio
+      - kselftest-ipc
+      - kselftest-kcmp
+      - kselftest-lib
+      - kselftest-livepatch
+      - kselftest-lkdtm
+      - kselftest-membarrier
+      - kselftest-mincore
+      - kselftest-mount
+      - kselftest-mqueue
+      - kselftest-nci
+      - kselftest-nsfs
+      - kselftest-openat2
+      - kselftest-pidfd
+      - kselftest-pid-namespace
+      - kselftest-ptrace
+      - kselftest-rlimits
+      - kselftest-rtc
+      - kselftest-seccomp
+      - kselftest-static-keys
+      - kselftest-sync
+      - kselftest-syscall-user-dispatch
+      - kselftest-sysctl
+      - kselftest-timens
+      - kselftest-timers
+      - kselftest-tmpfs
+      - kselftest-tpm2
+      - kselftest-user
+      - kselftest-vm
       - ltp-timers
       - sleep
       - usb
@@ -2832,7 +3445,47 @@ test_configs:
       - baseline-nfs
       - cros-ec
       - kselftest-alsa
+      - kselftest-capabilities
+      - kselftest-cgroup
+      - kselftest-clone3
+      - kselftest-core
+      - kselftest-cpufreq
+      - kselftest-exec
+      - kselftest-filesystems
+      - kselftest-filesystems-epoll
+      - kselftest-firmware
+      - kselftest-ftrace
+      - kselftest-futex
+      - kselftest-gpio
+      - kselftest-ipc
+      - kselftest-kcmp
+      - kselftest-kvm
+      - kselftest-lib
+      - kselftest-livepatch
+      - kselftest-lkdtm
+      - kselftest-membarrier
+      - kselftest-mincore
+      - kselftest-mount
+      - kselftest-mqueue
+      - kselftest-nci
+      - kselftest-nsfs
+      - kselftest-openat2
+      - kselftest-pidfd
+      - kselftest-pid-namespace
+      - kselftest-ptrace
+      - kselftest-rlimits
       - kselftest-rtc
+      - kselftest-seccomp
+      - kselftest-static-keys
+      - kselftest-sync
+      - kselftest-syscall-user-dispatch
+      - kselftest-sysctl
+      - kselftest-timens
+      - kselftest-timers
+      - kselftest-tmpfs
+      - kselftest-tpm2
+      - kselftest-user
+      - kselftest-vm
       - ltp-fcntl-locktests
       - ltp-pty
       - ltp-timers
@@ -2873,6 +3526,47 @@ test_configs:
       # baseline-nfs - Current configs lack networking
       - cros-ec
       # kselftest-alsa - Current configs lack networking
+      - kselftest-capabilities
+      - kselftest-cgroup
+      - kselftest-clone3
+      - kselftest-core
+      - kselftest-cpufreq
+      - kselftest-exec
+      - kselftest-filesystems
+      - kselftest-filesystems-epoll
+      - kselftest-firmware
+      - kselftest-ftrace
+      - kselftest-futex
+      - kselftest-gpio
+      - kselftest-ipc
+      - kselftest-kcmp
+      - kselftest-kvm
+      - kselftest-lib
+      - kselftest-livepatch
+      - kselftest-lkdtm
+      - kselftest-membarrier
+      - kselftest-mincore
+      - kselftest-mount
+      - kselftest-mqueue
+      - kselftest-nci
+      - kselftest-nsfs
+      - kselftest-openat2
+      - kselftest-pidfd
+      - kselftest-pid-namespace
+      - kselftest-ptrace
+      - kselftest-rlimits
+      - kselftest-rtc
+      - kselftest-seccomp
+      - kselftest-static-keys
+      - kselftest-sync
+      - kselftest-syscall-user-dispatch
+      - kselftest-sysctl
+      - kselftest-timens
+      - kselftest-timers
+      - kselftest-tmpfs
+      - kselftest-tpm2
+      - kselftest-user
+      - kselftest-vm
 
   - device_type: snow
     test_plans:
