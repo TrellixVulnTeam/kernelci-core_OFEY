@@ -223,6 +223,34 @@ device_types:
         image: 'https://storage.chromeos.kernelci.org/images/rootfs/chromeos/chromiumos-hatch/20220811.0/amd64/bzImage'
         modules: 'https://storage.chromeos.kernelci.org/images/rootfs/chromeos/chromiumos-hatch/20220811.0/amd64/modules.tar.xz'
 
+  asus-C523NA-A20057-coral_chromeos:
+    base_name: asus-C523NA-A20057-coral
+    mach: x86
+    arch: x86_64
+    boot_method: depthcharge
+    filters: *pineview-filter
+    params: &coral-params
+      cros_flash_nfs:
+        base_url: 'https://storage.kernelci.org/images/rootfs/debian/bullseye-cros-flash/20220812.0/amd64/'
+        initrd: 'initrd.cpio.gz'
+        initrd_compression: 'gz'
+        rootfs: 'full.rootfs.tar.xz'
+        rootfs_compression: 'xz'
+      cros_flash_kernel:
+        base_url: 'https://storage.chromeos.kernelci.org/images/kernel/v5.10.112-x86-chromebook/'
+        image: 'kernel/bzImage'
+        modules: 'modules.tar.xz'
+        modules_compression: 'xz'
+      cros_image:
+        base_url: 'https://storage.chromeos.kernelci.org/images/rootfs/chromeos/chromiumos-coral/20220830.0/amd64/'
+        flash_tarball: 'full-cros-flash.tar.gz'
+        flash_tarball_compression: 'gz'
+        tast_tarball: 'tast.tgz'
+      reference_kernel:
+        image: 'https://storage.chromeos.kernelci.org/images/rootfs/chromeos/chromiumos-coral/20220830.0/amd64/bzImage'
+        modules: 'https://storage.chromeos.kernelci.org/images/rootfs/chromeos/chromiumos-coral/20220830.0/amd64/modules.tar.xz'
+      block_device: detect
+
   hp-11A-G6-EE-grunt_chromeos:
     <<: *chromebook-generic-type
     base_name: hp-11A-G6-EE-grunt
@@ -314,6 +342,11 @@ test_configs:
       - cros-tast-perf
       - cros-tast-platform
       - cros-tast-video
+    
+  - device_type: asus-C523NA-A20057-coral_chromeos
+    test_plans:
+      - cros-baseline-fixed
+      - cros-flash
 
   - device_type: hp-x360-12b-ca0010nr-n4020-octopus_chromeos
     test_plans:
