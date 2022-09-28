@@ -375,14 +375,17 @@ build_environments:
   clang-15:
     cc: clang
     cc_version: 15
-    arch_params:
-      <<: *clang_12_arch_params
+    arch_params: &clang_15_arch_params
+      <<: *clang_11_arch_params
+      riscv:
+        <<: *riscv_params
+        name:
 
   clang-16:
     cc: clang
     cc_version: 16
     arch_params:
-      <<: *clang_12_arch_params
+      <<: *clang_15_arch_params
 
 # Default config with full build coverage
 build_configs_defaults:
@@ -493,7 +496,9 @@ arch_clang_configs: &arch_clang_configs
     extra_configs:
       - 'allmodconfig'
       - 'allnoconfig'
-
+  riscv:
+    extra_configs: &riscv_clang_configs
+      - 'allnoconfig'
 
 # Minimum architecture defconfigs
 arch_defconfigs: &arch_defconfigs
@@ -830,13 +835,6 @@ build_configs:
         build_environment: clang-16
         architectures:
           <<: *arch_clang_configs
-          riscv:
-            extra_configs: &riscv_clang_configs
-              - 'allnoconfig'
-              - 'defconfig+CONFIG_EFI=n'
-            filters:
-              - passlist:
-                  defconfig: *riscv_clang_configs
 
   next_pending-fixes:
     tree: next
